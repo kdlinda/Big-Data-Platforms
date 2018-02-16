@@ -1,5 +1,5 @@
 ### Create new Hadoop directory
-hdfs dfs mkdir -p /user/hadoop/ex27
+hdfs dfs -mkdir -p /user/hadoop/ex27
 
 ### Copy tree text file
 hdfs dfs -put ./arbres.csv /user/hadoop/ex27/arbres.csv

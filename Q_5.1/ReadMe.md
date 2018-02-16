@@ -10,9 +10,11 @@ hdfs dfs -mkdir -p /q51/input
 3. Download necessary files 
 
 wget http://www.textfiles.com/etext/FICTION/defoe-robinson-103.txt
+
 hdfs dfs -copyFromLocal defoe-robinson-103.txt /q51/input
 
 wget http://www.textfiles.com/etext/FICTION/callwild
+
 hdfs dfs -copyFromLocal callwild /q51/input
 
 4. Run Hadoop Streaming

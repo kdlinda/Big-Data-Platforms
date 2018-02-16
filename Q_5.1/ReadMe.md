@@ -27,5 +27,7 @@ hadoop jar ../hadoop-streaming-2.6.0-cdh5.12.0.jar \
 -reducer reducer.py
 
 5. Get Output
+
 hdfs dfs -get /q51
+
 cat ./q51/out_round3/part-00000 | python top_20_tfidf.py

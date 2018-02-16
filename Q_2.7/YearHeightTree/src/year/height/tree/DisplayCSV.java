@@ -10,7 +10,7 @@ public class DisplayCSV {
 	public static void main(String[] args) throws IOException {
 		
 		String inputSrc = "/Users/noemiequere/Documents/SCHOOL/DSBA/T1/Big_Data_Algorithms/arbres.csv";
-		String outputSrc = "/Users/noemiequere/Documents/SCHOOL/DSBA/T1/Big_Data_Algorithms/ex2.7.txt";
+		String outputSrc = "";
 		
 				
 		// Open the file

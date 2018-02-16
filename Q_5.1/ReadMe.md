@@ -1,4 +1,4 @@
-# Goal: calculate Term Frequency-Inverse Document Frequency (TF-IDF) of a set of documents using MapReduce. In particular, you will use the following documents that you will add to HDFS
+# Goal: calculate Term Frequency-Inverse Document Frequency (TF-IDF) of a set of documents using MapReduce
 
 # To Run:
 1. Launch hadoop: 

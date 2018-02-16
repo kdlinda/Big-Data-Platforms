@@ -1,5 +1,5 @@
 ### Create new Hadoop directory
-hdfs dfs mkdir -p /user/hadoop/ex28
+hdfs dfs -mkdir -p /user/hadoop/ex28
 
 ### Copy isd history text file
 hdfs dfs -put ./arbres.csv /user/hadoop/ex28/isd-history.txt

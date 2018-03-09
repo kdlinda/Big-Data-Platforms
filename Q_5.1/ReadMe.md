@@ -2,9 +2,11 @@
 
 # To Run:
 1. Launch hadoop: 
+
 $ start-dfs.sh
 
 2. Input directory
+
 hdfs dfs -mkdir -p /q51/input
 
 3. Download necessary files 

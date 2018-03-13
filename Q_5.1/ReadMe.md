@@ -20,6 +20,7 @@ wget http://www.textfiles.com/etext/FICTION/callwild
 $ hdfs dfs -copyFromLocal callwild /q51/input
 
 4. Run Hadoop Streaming
+
 $ hadoop jar ../hadoop-streaming-2.6.0-cdh5.12.0.jar \
 -input /q51/input \
 -output /q51/output \
@@ -30,6 +31,4 @@ $ hadoop jar ../hadoop-streaming-2.6.0-cdh5.12.0.jar \
 
 5. Get Output
 
-$ hdfs dfs -get /q51
-
-$ cat ./q51/out_round3/part-00000 | python top_20_tfidf.py
+$ hdfs dfs -get /q51/output/part-00000

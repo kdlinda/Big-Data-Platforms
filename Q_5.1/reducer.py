@@ -7,11 +7,10 @@ import csv
 from math import log10
 from collections import defaultdict
 
-
 words = []
-w_last_txt_id = None
+w_last_txtid = None
 df_dict = defaultdict(lambda: set())
-txt_id_list = set()
+txtid_list = set()
 
 #--- Input comes from STDIN ---
 for line in sys.stdin:
@@ -23,50 +22,46 @@ for line in sys.stdin:
 	
 	w_count = int(w_count)
 	df = int(df)
-	word,txt_id = key.split(",")
-	txt_id = int(txt_id)
-	w_txt_id = (word,txt_id)
+	word,txtid = key.split(",")
+	txtid = int(txtid)
+	w_txtid = (word,txtid)
 
 	#--- WordCount ---
-	if w_last_txt_id is None:					
-		w_last_txt_id = w_txt_id
+	if w_last_txtid is None:					
+		w_last_txtid = w_txtid
 		last_w_count = 0
 		last_w_count_per_txt = w_count_txt
 		last_df = df
-	if w_txt_id == w_last_txt_id:
+	if w_txtid == w_last_txtid:
 		last_w_count += w_count
 	else:
-		words.append([w_last_txt_id,last_w_count,last_w_count_per_txt,last_df])
+		words.append([w_last_txtid,last_w_count,last_w_count_per_txt,last_df])
 		
 		# set new values
-		w_last_txt_id = w_txt_id
+		w_last_txtid = w_txtid
 		last_w_count = w_count
 		last_w_count_per_txt = w_count_txt
 		last_df = df
 	
 	#--- df Calculation --- 
 	dict_v = df_dict[word]
-	dict_v.add(txt_id)
+	dict_v.add(txtid)
 	df_dict[word] = dict_v
 	
-	txt_id_list.add(txt_id)
+	txtid_list.add(txtid)
 
-words.append([w_last_txt_id,last_w_count,last_w_count_per_txt,last_df])
-N = len(txt_id_list)
+words.append([w_last_txtid,last_w_count,last_w_count_per_txt,last_df])
+N = len(txtid_list)
 
-for w_block in words:
-	word,txt_id,w_count,w_count_txt,df = w_block[0][0],int(w_block[0][1]),int(w_block[1]),int(w_block[2]),int(w_block[3])
+for item in words:
+	word,txtid,w_count,w_count_txt,df = item[0][0],int(item[0][1]),int(item[1]),int(item[2]),int(item[3])
 	df = len(df_dict[word])
 
 	#--- Calculating Tf-idf score ---
-	w_block.append(w_count * w_count_txt * log10(N/df))
-	tfidf = w_block[4]
-
-	#--- Collecting Data Pairs (word, doc_ID, Tf-idf) ---
-	formatted_k = '{0:_<30}\n'.format("%s,%i" % (word,txt_id))
-	print("%s\t%i\t%i\t%i\t%.*f" % (formatted_k,w_count,w_count_txt,df,5,tfidf))
+	item.append(w_count * w_count_txt * log10(N/df))
 
 #--- Output: Top20 Words per Text ---
-for txt_id in txt_id_list:
-	top20_words = sorted([w_block for w_block in words if w_block[0][1] == txt_id], key=lambda x: x[4], reverse=True)[:20]
+for txtid in txtid_list:
+	top20_words = sorted([item for item in words if item[0][1] == txtid], key=lambda x: x[4], reverse=True)[:20]
 	print(top20_words)
+

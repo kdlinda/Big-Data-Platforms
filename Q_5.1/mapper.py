@@ -1,9 +1,9 @@
 #!/usr/bin/python
+
 #coding: utf-8
 
 import sys
 import re
-from nltk.corpus import stopwords
 
 words = []
 txt_id=0

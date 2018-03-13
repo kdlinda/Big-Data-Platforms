@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/python
 
 import sys
 
@@ -17,9 +17,9 @@ def node_processor(ls):
 
         n, value = i.split('\t', 1)
 
-        typ, val = value.split(' ', 1)
+        typ, value = value.split(' ', 1)
         
-        if typ == 'node':
+        if type == 'node':
             adj_list = value
             node = n
         
@@ -31,7 +31,7 @@ def node_processor(ls):
 
     page_rank = (1.0 - damping) + (damping * page_rank)
 
-    # If node = none, no adjacencylist for this node
+    # If node = none, no adjacency list for this node
     if node == None:
         pass
     else:
@@ -41,7 +41,7 @@ def node_processor(ls):
 for line in sys.stdin:
 
     line = line.strip()
-    node = line.split('\t', 1)[0][:-1] # Skip the last char which is used for a sorting trick
+    node = line.split('\t', 1)[0][:-1] # Skip the last char which is used for sorting
 
     # If 1st node, set the current node
     if current_node == None:

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/python
 
 import sys
 
@@ -12,4 +12,3 @@ for line in sys.stdin:
 
 for i in sorted(data, key=lambda x: x[1], reverse=True)[:20]:
     print(i)
-

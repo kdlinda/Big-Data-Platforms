@@ -3,7 +3,6 @@
 
 import sys
 import os
-import csv
 from math import log10
 from collections import defaultdict
 

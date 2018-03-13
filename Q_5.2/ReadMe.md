@@ -22,8 +22,11 @@ $ hadoop jar ./hadoop-streaming-2.6.0-cdh5.12.0.jar \
 -mapper MapperMaster.py
 
 declare -i n
+
 n=10
+
 for i in $(seq 1 10);
+
 do
     
     hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.12.0.jar \

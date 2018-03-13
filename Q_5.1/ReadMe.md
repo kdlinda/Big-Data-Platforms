@@ -2,15 +2,15 @@
 calculate Term Frequency-Inverse Document Frequency (TF-IDF) of a set of documents using MapReduce
 
 # To Run:
-1. Launch hadoop: 
+## 1. Launch hadoop: 
 
 $ start-dfs.sh
 
-2. Input directory
+## 2. Input directory
 
 $ hdfs dfs -mkdir -p /q51/input
 
-3. Download necessary files 
+## 3. Download necessary files 
 
 wget http://www.textfiles.com/etext/FICTION/defoe-robinson-103.txt
 
@@ -20,7 +20,7 @@ wget http://www.textfiles.com/etext/FICTION/callwild
 
 $ hdfs dfs -copyFromLocal callwild /q51/input
 
-4. Run Hadoop Streaming
+## 4. Run Hadoop Streaming
 
 $ hadoop jar ../hadoop-streaming-2.6.0-cdh5.12.0.jar \
 -input /q51/input \
@@ -30,6 +30,6 @@ $ hadoop jar ../hadoop-streaming-2.6.0-cdh5.12.0.jar \
 -file ./reducer.py \
 -reducer reducer.py
 
-5. Get Output
+## 5. Get Output
 
 $ hdfs dfs -get /q51/output/part-00000

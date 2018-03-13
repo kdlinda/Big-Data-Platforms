@@ -25,6 +25,7 @@ declare -i n
 n=10
 for i in $(seq 1 10);
 do
+    
     hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.12.0.jar \
 	-input /Q_52/output_$i \
 	-output /Q_52/output_$((i+1)) \

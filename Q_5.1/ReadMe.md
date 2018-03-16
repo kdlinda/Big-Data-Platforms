@@ -32,5 +32,5 @@ calculate Term Frequency-Inverse Document Frequency (TF-IDF) of a set of documen
 
     $ hdfs dfs -get /Q_51/output/part-00000
 
-## Output:
+# Output:
 Please see the solution for the exercise under the document part-00000 in the output folder.
